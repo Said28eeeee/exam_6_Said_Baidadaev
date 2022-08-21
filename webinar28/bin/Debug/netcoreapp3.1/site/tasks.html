@@ -1,0 +1,51 @@
+@{
+    Layout = "layout";
+}
+<div class="task_container">
+    <form action="http://localhost:8888/tasks.html" method="post">
+        <div class="container">
+            <div class="box">
+                <div class="container">
+                    <h1>Employees</h1>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Surname</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">State</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var i in Model.Result){
+                            <tr>
+                                <th scope="row">@i.Id</th>
+                                <td>@i.Name</td>
+                                <td>@i.UserName</td>
+                                <td>@DateTime.Now</td>
+                                <td>@i.Description</td>
+                                <td>@i.State</td>
+                                <td><a href="http://localhost:8888/showTask.html?id=@i.Id">Подробнее</a></td>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                  </table>
+                </div>
+              <div class="text-center">
+                <input type="text" name="Id" placeholder="Id" class="col-8">
+                <br>
+                <input type="text" name="Name" placeholder="Name" class="col-8">
+                <br>
+                <input type="text" name="UserName" placeholder="UserName" class="col-8">
+                <br>
+                <input type="text" name="Description" placeholder="Description" class="col-8">
+                <br>
+                <button type="submit" class="btn btn-primary mt-5 col-4">Добавить</button>
+            </div>
+            </div>
+          </div>
+    </form>
+</div>

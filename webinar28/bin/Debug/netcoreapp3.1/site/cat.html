@@ -1,0 +1,35 @@
+@{
+    Layout = "layout";
+}
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="image-div col-4">
+            @{
+                if (Model.Result.HappyLevel >= 0 && Model.Result.HappyLevel < 20){
+                    <img class="w-100 h-auto" src="https://kor.ill.in.ua/m/610x385/2722809.jpg" alt="angry_cat">
+                } else if (Model.Result.HappyLevel >= 20 && Model.Result.HappyLevel < 40) {
+                    <img class="w-100 h-auto" src="https://static.dw.com/image/56615749_101.jpg" alt="normal_cat">
+                } else {
+                    <img class="w-100 h-auto" src="https://cs5.pikabu.ru/post_img/big/2015/12/30/8/145147830816727722.jpg" alt="happy_cat">
+                }
+            }
+        </div>
+        <div class="info-div col-6">
+            Name - @Model.Result.Name <br>
+            Age - @Model.Result.Age <br>
+            Satiety - @Model.Result.SatietyLevel <br>
+            Happy - @Model.Result.HappyLevel <br>
+            @Model.Result.State
+        </div>
+    </div>
+    <h4 class="text-center">@Model.Result.Message</h4>
+    <form action="http://localhost:8888/cat.html" method="get">
+        <label for="cat">Выберите действие</label>
+        <select name="catAction" id="cat">
+            <option value="play">Поиграть с котом</option>
+            <option value="feed">Кормить кота</option>
+            <option value="sleep">Уложить спать</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Подтвердить</button>
+    </form>
+</div>

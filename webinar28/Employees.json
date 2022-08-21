@@ -1,0 +1,33 @@
+[
+  
+  {
+    "Id": 1,
+    "Name": "Ivan",
+    "Age": 25,
+    "State": "first"
+  },
+  {
+    "Id": 2,
+    "Name": "Vasya",
+    "Age": 25,
+    "State": "first"
+  },
+  {
+    "Id": 3,
+    "Name": "Igor",
+    "Age": 25,
+    "State": "second"
+  },
+  {
+    "Id": 4,
+    "Name": "Petr",
+    "Age": 25,
+    "State": "second"
+  },
+  {
+    "Id": 5,
+    "Name": "Geralt",
+    "Age": 25,
+    "State": "third"
+  }
+]
