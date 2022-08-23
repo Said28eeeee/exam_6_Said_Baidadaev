@@ -1,3 +1,35 @@
-.container{overflow:hidden;width:200px}
-.box{white-space:nowrap}
-.box div{width:90px;display:inline-block;border:1px solid black}
+.container{
+    min-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.info-block-1{
+    background-color: #fff;
+    color: #656e74;
+    margin-top: 80px;
+    display: flex;
+}
+
+.text-block{
+    width: 55%;
+}
+
+.text-block2{
+    width: 45.55%;
+    padding-left: 200px;
+    padding-top: 80px;
+}
+
+.taskinfo{
+    width: 65%;
+}
+
+.taskaction{
+    width: 30%;
+    padding-right: 300px;
+}
+
+.text{
+    margin-top: 50px;
+}

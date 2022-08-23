@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aJgEmnmsSIMv2rjuFxXRFgZo7+SNnjlRWvnKVAnJPLFVUUCJJUzruwKaXQsRU3/nio3DhbS2HEQjV5Nqw5/anA==",
+  "dgSpecHash": "/FG/6hPuQ7O3Qzp4jWzdRY8hc9AIN3EVOt0Wu1OIq6JX2P2GHTwOxAkFE33+LS5ZhltdDOtasrIUgdRsXmKuiw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\webinar28.1\\webinar28\\webinar28.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\курсы\\webinar28.1\\webinar28\\webinar28.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
@@ -13,6 +13,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\razorengine.netcore\\3.1.0\\razorengine.netcore.3.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.collections.immutable\\1.5.0\\system.collections.immutable.1.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",

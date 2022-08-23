@@ -13,7 +13,7 @@ namespace webinar28
     internal class DumbHttpServer
     {
         private Thread _serverThread;
-        //private Task task;
+        private Task task;
 
         private string _siteDirectory;
 
@@ -99,6 +99,10 @@ namespace webinar28
         private void Process(HttpListenerContext context)
 
         {
+            if (tasks == null || tasks.Contains(null))
+            {
+                tasks = new List<Task>();
+            }
 
             string filename = context.Request.Url.AbsolutePath;
 
@@ -146,7 +150,48 @@ namespace webinar28
                         if (i.Id == id)
                         {
                             content = BuildHtml(filename, i);
-                            break;
+                        }
+                    }
+                }
+                else if (context.Request.HttpMethod == "POST" && test == ("showTask.html"))
+                {
+                    int.TryParse(context.Request.QueryString.Get("id"), out int id);
+                    foreach (var i in tasks)
+                    {
+                        if (i.Id == id)
+                        {
+                            var body = new StreamReader(context.Request.InputStream).ReadToEnd();
+                            string[] rawParams = body.Split('&');
+                            for (int a = 0; a < rawParams.Length; a++)
+                            {
+                                string[] kvPair = rawParams[a].Split('=');
+                                rawParams[a] = kvPair[1];
+                            }
+                            if (rawParams[0] == null)
+                                rawParams[0] = "";
+                            if (rawParams[0].Contains("execute"))
+                            {
+                                string json = File.ReadAllText("../../../Tasks.json");
+                                dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+                                jsonObj[tasks.IndexOf(i)]["State"] = "Done";
+                                string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+                                File.WriteAllText("../../../Tasks.json", output);
+                                isRedirect = true;
+                                context.Response.Headers.Add(HttpResponseHeader.Location, "/tasks.html");
+                            }
+                            if (rawParams[0].Contains("delete"))
+                            {
+
+                                string json = File.ReadAllText("../../../Tasks.json");
+                                dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+                                jsonObj[tasks.IndexOf(i)] = null;
+                                string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+                                File.WriteAllText("../../../Tasks.json", output);
+                                tasks.Remove(i);
+                                isRedirect = true;
+                                context.Response.Headers.Add(HttpResponseHeader.Location, "/tasks.html");
+                            }
+
                         }
                     }
                 }
@@ -247,36 +292,6 @@ namespace webinar28
             return contentType;
 
         }
-
-        //private string BuildEmployeeHtml(string filename, Employee employee)
-        //{
-        //    string html = "";
-        //    string layoutPath = Path.Combine(_siteDirectory, "layout.html");
-        //    string filePath = Path.Combine(_siteDirectory, filename);
-        //    var razorService = Engine.Razor; // Подключаем движок
-
-        //    if (!razorService.IsTemplateCached("layout", null)) // Проверяем наличие базового шаблона в кэше
-        //        razorService.AddTemplate("layout", File.ReadAllText(layoutPath)); //Добавляем его если отсутствует
-
-
-        //    if (!razorService.IsTemplateCached(filename, null))//Находим шаблон страницы который будет вложен в базовый
-
-        //    {
-
-        //        razorService.AddTemplate(filename, File.ReadAllText(filePath));
-
-        //        razorService.Compile(filename);
-
-        //    }
-
-
-        //    html = razorService.Run(filename, null, new
-        //    {
-        //        Employee = employee
-        //    }) ;
-
-        //    return html;
-        //}
 
         private string BuildHtml(string filename, object result)
         {

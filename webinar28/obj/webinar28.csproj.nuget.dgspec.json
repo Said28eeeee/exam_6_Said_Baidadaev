@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\webinar28.1\\webinar28\\webinar28.csproj": {}
+    "C:\\Users\\user\\Desktop\\курсы\\webinar28.1\\webinar28\\webinar28.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\webinar28.1\\webinar28\\webinar28.csproj": {
+    "C:\\Users\\user\\Desktop\\курсы\\webinar28.1\\webinar28\\webinar28.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\webinar28.1\\webinar28\\webinar28.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\курсы\\webinar28.1\\webinar28\\webinar28.csproj",
         "projectName": "webinar28",
-        "projectPath": "C:\\Users\\user\\Desktop\\webinar28.1\\webinar28\\webinar28.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\курсы\\webinar28.1\\webinar28\\webinar28.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\webinar28.1\\webinar28\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\курсы\\webinar28.1\\webinar28\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "Microsoft.AspNetCore.Razor": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "RazorEngine.NetCore": {
               "target": "Package",
